@@ -1,0 +1,632 @@
+Conservancy's Evaluation Committee meets monthly.  While I cannot
+guarantee your project will be evaluated in a specific month (the meeting
+lasts one hour and we push through as many application as we can), getting
+your application in by the end of any given month means that at least your
+project will be on the agenda for the following month's meeting.  You
+project will of course stay on the agenda until the Evaluation Committee
+gets to it.
+######################################################################
+The Software Freedom Conservancy encourages your project to apply for
+Conservancy.  Please be advised that applying doesn't guarantee your
+project can join Conservancy; it's simply the first step in the process
+of joining Conservancy.
+
+Please note that Conservancy currently has a long queue for project
+applications, so we cannot assure you when you will receive a response to
+your application.  Feel free to ping Conservancy at any time to inquire
+about the status of your application.
+
+To apply to the Conservancy, please answer fully all the questions below,
+in a *single* text-only (i.e., not HTML) email to
+<apply@sfconservancy.org>.  Please try to be as concise as possible while
+making sure to answer the questions fully.
+
+If the relevant information is already gathered and publicly available,
+It's ok to include URLs as answers.  However, if a given URL has lots of
+information on it, please make sure that you direct us specifically to
+the portions of the web page loaded by the given URL that are relevant in
+answering the question.
+
+Conservancy Application Questions:
+
+*** Why does your project want to join Conservancy?  Specifically, what
+    benefits do you expect to take advantage of immediately and within a
+    few years?
+
+    We would like to join a foundation in order to mature the business
+    aspects of our project: in particular accounting and governance.
+
+    In terms of accounting, we have very little funds and do very little
+    fundraising at present.  We feel that with some fundraising, we could
+    better support the project by (for example):
+
+    * extending our continuous integration infrastructure
+    * improve marketing and advertising of libgit2 itself
+    * hold annual in-person meetings
+
+    However, we do not want to do fundraising without an organization
+    that can support us: we feel strongly that the project maintainers
+    should not be handling funds or fundraising directly.  Even with the
+    best intentions and methods, there is simply too much risk for a
+    person to manage the project's funds directly - both risk to the
+    project and personal liability for the maintainer.
+
+    We would also like to formalize our governance structure.  At the
+    moment, it is rather ad hoc.  Thankfully, there have been no
+    serious disagreements or concerns.  Notably, there have been no
+    legal or compliance issues.  However, we would like to learn
+    best practices and have a governance structure in place just in
+    case there are any issues that need resolution.
+
+    We plan to take immediate advantage of accounting so that we can
+    have a separate fund for the project.  We would also like to take
+    advantage of the Conservancy to consult with us to ensure that we
+    have the necessary structure(s) in place for governance.  We would
+    also like to consult with the Conservancy to better understand if
+    we need any trademark protection on the name "libgit2".
+
+*** Conservancy does encourage projects to apply to multiple non-profit
+    homes to find the best fit.  Does your project have an application
+    pending with any other non-profit homes?  What do you see as the pros
+    and cons of the various organizations you've applied to?
+
+    We do not have other applications outstanding.  We would consider it,
+    if rejected from the Conservancy, but we feel like the SFC is the
+    most natural choice for us, due to our alignment with the Git project
+    itself, who is already a Conservancy member.
+
+    We grew out of the Git project, and communicate amongst each other
+    frequently to ensure compatibility, share code and developers.  We
+    collaborate occasionally on business matters like discussing
+    trademarks and the like.
+
+    This coordination has informed our desire to join the Conservancy,
+    and we feel it a natural outgrowth of our coordination with Git.
+
+*** Please give a detailed description of the project.
+
+    The libgit2 project is a portable, pure C implementation of the Git
+    core methods provided as a re-entrant linkable library.  It is used
+    for the Git repository management functionality in a number of
+    different services and products, both open source and proprietary.
+
+    Most, if not all, of these products use libgit2 by way of one of a
+    number of "language binding" libraries that are built on top of libgit2
+    and exist to provide idiomatic Git libraries in other languages.
+
+    While each of these language binding projects have their own
+    development communities around them, they each have significant
+    interaction with the libgit2 community.  Many of the developers and
+    community members of the libgit2 project also work on the language
+    bindings.  The most popular and developed of these are:
+
+    - LibGit2Sharp, a .NET implementation on top of libgit2
+    - NodeGit, a node.js implementation on top of libgit2
+    - ObjectiveGit, an Objective C implementation on top of libgit2, and
+    - Rugged, a Ruby implementation on top of libgit2
+
+*** What FLOSS License(s) does your project use?  Please include the
+    primary license, and list other licenses for code that is included.
+    (e.g., "The project as a whole is GPLv3-or-later, but about a dozen
+    files in the directory src/external/ are under the Apache-2.0
+    license").  Please be sure to include information on documentation
+    licensing as well as software licensing.
+
+    libgit2 is licensed under the GPL version 2 with a linking
+    exception.  The linking exception is:
+
+        In addition to the permissions in the GNU General Public License,
+        the authors give you unlimited permission to link the compiled
+        version of this library into combinations with other programs,
+        and to distribute those combinations without any restriction
+        coming from the use of this file.  (The General Public License
+        restrictions do apply in other respects; for example, they cover
+        modification of the file, and distribution when not linked into
+        a combined executable.)
+
+    In addition, we include some additional small components that are
+    under different licenses:
+
+    src/khash.h: MIT
+    src/path.c:git_path_basename_r: BSD
+    src/path.c:git_path_dirname_r: BSD
+    src/tsort.c: MIT
+    src/util.c:git__bsearch: BSD
+    src/util.c:git__utf8_iterate: BSD
+
+    Finally, we include some dependencies for cross-platform compilation
+    that are included in the project when they are not available on the
+    underlying operating system:
+
+    src/fnmatch.c: BSD
+    src/hash/sha1dc.c: MIT
+    deps/http-parser: MIT
+    deps/regex: LGPL version 2.1
+    deps/winhttp: LGPL version 2.1
+    deps/zlib: zlib
+
+    The LibGit2Sharp project is licensed under the MIT license, and
+    includes the tar-cs project as LibGit2Sharp/Core/TarWriter.cs, which
+    is licensed under the BSD license.
+
+    The NodeGit project is licensed under the MIT license.
+
+    The ObjectiveGit project is licensed under the MIT license.
+
+    The Rugged project is licensed under the MIT license.
+
+*** Please give us your roadmap and plans for future development of the
+    project, including both code and community plans.
+
+    As far as the software goes, we intend to keep implementing new
+    features to keep up with the development that Git itself is doing.
+    We're a bit behind in feature parity - some of the top features
+    that we're interested in are patch application, complete rebase
+    functionality and performance improvements.
+
+    We would also like to improve the "testability" of libgit2:
+    although we have a rather comprehensive test suite, we would like
+    to explore the possibility of re-using git's tests in some manner,
+    which would give us better test coverage and would especially
+    show places where we deviate from them.
+
+    As far as community plans go: we would like to do more developer
+    advocacy and outreach.  We have many users who are using libgit2
+    in very high profile ways: many Git GUI clients are built on top
+    of libgit2, and all of the major Git hosting providers use libgit2
+    in some way.  (Most of the pull requests completed are done using
+    libgit2!)  But many of these projects are consumers of libgit2,
+    but not contributors.
+
+    We think that we can do a better job at converting users to
+    contributors.  We had a very successful summit in March 2018,
+    where we brought together many of the people who use libgit2
+    to discuss it.  We came away with many positive commitments to
+    work together better - between the libgit2 project and our users.
+
+    This is a positive step, and we think that more and better
+    outreach will continue to improve this.  We plan to have an
+    annual summit, but also to do regular (monthly) video chats with
+    the core contributors that are open to the public.  We are setting
+    up mailing lists for announcements and outbound communication.  We
+    also will continue to work with our users to find out what's working
+    for them in terms of community collaboration and what we can improve.
+
+*** Please give us the main link to the projects primary website.
+
+    https://libgit2.github.com
+
+*** Please give us a URL to a code repository we can clone and/or
+    checkout.
+
+    https://github.com/libgit2/libgit2
+
+*** Have you ever had funds held by the project, or by any individual on
+    behalf of the project?  How and for what did you spend those funds?
+    Are there funds remaining?  If so, who is holding them now?
+
+    There have been no fundraising done by the project, and there has
+    been no income to or funds held by the project.
+
+    libgt2 has participated in Google's Summer of Code program under
+    the umbrella of the Git project thrice, but those payments (to the
+    mentoring project) were made to the Git project.
+
+    In addition, we have non-monetary assets like domain names (libgit2.org,
+    libgit2.com, libgit2sharp.org, libgit2sharp.com), which are held by
+    Edward Thomson and email addresses and social media accounts.
+
+*** Do you have any ongoing fundraising programs for your project?  How do
+    they operate, and how much funding is brought in through these mechanisms
+    currently?  Where do you expect most of your donor base to be
+    geographically?
+
+    We do not yet, though if we were to join the Conservancy, we would be
+    likely to do so.  We would like to raise very modest funds (well under
+    $10,000 USD annually) in order to support development infrastructure
+    costs (primarily continuous integration services).  We expect this
+    fundraising to occur in the United States and Europe.
+
+*** Going forward, once inside Conservancy, how do you expect to spend funds
+    that you raise?  What types of activity do you want to ask Conservancy to
+    take on your behalf?  Where geographically do you want those activities
+    to take place?
+
+    Our main ongoing use of funds would be to pay for Continuous
+    Integration (build and test) services.  In addition, we have some
+    minor ongoing infrastructure costs like domain name hosting.
+
+    We do not expect there to be significant additional cash on hand,
+    but if there is, we would use that to provide travel arrangements
+    for in-person meetups to core developers of libgit2 (and binding
+    libraries) whose employers do not pay for their travel.
+
+    Finally, we would like to use some cash for promotional purposes
+    (printing t-shirts, stickers, etc.)
+
+*** Is your project able and willing to participate in fundraising
+    campaigns with Conservancy on an annual or perhaps more frequent
+    basis?
+
+    Yes.
+
+*** Does your project owe funds to anyone?
+
+    No.
+
+*** Who currently holds your projects' trademarks, if any?  When was your
+    projects' name first used, and who used it?
+
+    We have not registered any trademarks but we have received
+    permission from the Git project to use the name "libgit2".
+
+*** Does you project have a logo?  If so, who drew it, when did they draw
+    it, where is it displayed and what is its license?
+
+    The logo and banner were made by Jason Long in 2012. It is
+    displayed on our website and the LibGit2Sharp library (the C# bindings
+    to libgit2) carry it in their source repository. It is under the
+    Creative Commons Attribution 3.0 Unported license.
+
+*** Are you aware of anyone in your project, individual or company,
+    holding a patent in any jurisdiction that are in any way related to
+    your project?
+
+    No.
+
+*** Has your project ever had legal trouble, been involved in legal
+    proceedings or received a letter accusing your project of patent,
+    copyright, trademark or other types of infringement?
+
+    No.
+
+*** Please give a brief history of the project, focusing on how the
+    community developed and the general health of the community.  Be sure
+    to include information on any forks or other disputes that have
+    occurred in the community.
+
+    libgit2 was initially conceived by Shawn Pearce, a developer on the
+    Git project who wanted to include a linkable git library in another
+    project.  He relicensed the code that he had written in the git
+    project (which is GPL version 2 licensed) to include a linking
+    exception and encouraged other git developers to do the same.
+    The git developers that have given their explicit permission to
+    relicense code from git into libgit2 under the GPLv2 + linking
+    exception are detailed in the /git.git-authors file.
+
+    Although some of the libgit2 code came from the Git project, libgit2
+    has also had many direct contributors over the years.  These developers
+    have primarily come from other projects that wanted to use libgit2 for
+    Git repository manipulation.
+
+    Although many of the core developers are or have been employed by
+    organizations that compete with each other, there has been little to
+    no worry about that greater competition within libgit2.  The community
+    has focused on building a shared library together and doing the best
+    thing for the library, thankfully without pressure from those employers.
+
+    There have been no serious disputes and no forks.
+
+*** Please explain how your project is governed.  Who makes the decisions
+    in the project?  How do you resolve disputes, particularly about
+    non-code issues?
+
+    The project is governed by a leadership team comprised of three
+    contributors:
+
+    Carlos Martín Nieto <cmn@dwim.me>
+    Edward Thomson <ethomson@edwardthomson.com>
+    Patrick Steinhardt <ps@pks.im>
+
+    We intend to maintain a leadership team of three people that:
+
+    1. Includes people who have meaningfully contributed to the project
+    2. Includes people who have contributed code to the project and/or
+       individuals who have contributed non-code resources (for example:
+       organizational assistance, legal guidance or documentation)
+    3. Does not comprise a group of three people all employed by the same
+       company.
+
+    If there are disputes, they will be resolved by majority vote of
+    the leadership team.
+
+    A leader may resign their position at any time by writing to the
+    other leads and letting them know of their intention.  Membership
+    of the leadership team is decided by a majority vote of the current
+    leaders.
+
+    Note that we realize that point (3) is in contradiction with the
+    default sponsorship agreement template:
+    https://sfconservancy.org/docs/sponsorship-agreement-template.pdf
+    but we would request that, if accepted, the "avoiding employees of
+    same company serving together" section be amended to state that
+    no more than _two_ Members may be Employed by the same Entity.
+
+    We understand there is prior art here, with the Git project, in
+    particular.  At this point the development community for Git libraries
+    is small enough that we fear that we risk losing leadership if we
+    enact this clause: we have had a few periods where two primary
+    contributors were working for the same company.  (Carlos and Edward
+    both spent a period working together at Microsoft, and later spent
+    a period working together at GitHub.)
+
+*** Does your project currently offer, or wish to offer any consulting or
+    training services (such as deployment, administration or other such
+    services of the software for users) to your user base?  If so, how do
+    you structure (or seek to structure) this work?
+
+    No.  At present, none of the project's core contributors offer
+    or have plans to offer consulting or training services.
+
+*** Is anyone in the project currently offering a Software as a Service
+    system based on project?  If so, how is that offering governed,
+    coordinated and is the software that runs the service made fully
+    available to your users?
+
+    None of the core contributors are personally providing services,
+    but some of the contributors work for companies such as GitHub
+    and Microsoft that do run code hosting and code review services
+    where libgit2 is used for some of the functionality.
+
+*** If your project runs on Linux-based systems, please list all the
+    distributions that include your project, and what "repository area"
+    the package appears in.  If you aren't packaged for any major
+    distributions, please tell us why you believe your project hasn't been
+    packaged yet.
+
+    Debian has libgit2 in main. It is currently in all supported versions.
+    Ubuntu has a package for libgit2 beginning in Trusty.
+
+    Fedora has libgit2 in F20 through F22 and devel as well as EPEL 5
+    through 7.
+
+    Gentoo has libgit2 in the main repository, and Arch has libgit2 in
+    the Extra repository.
+
+*** Does your project have any existing for-profit or non-profit
+    affiliations, funding relationships, or other agreements between the
+    project and/or key leaders of your project and other organizations?
+    Has the project had such affiliations in the past?  Please list of all
+    of them in detail and explain their nature. Even tangential
+    affiliations and relationships, or potential affiliations that you
+    plan to create should be included.
+
+    We have tried to avoid funding coming in to the libgit2 project
+    since there is no proper organizational structure for the libgit2
+    project.  Maintainers and coordinators have been (understandably)
+    hesitant to try to collect or spend money on behalf of the project.
+
+    At present, Microsoft is paying for our Windows continuous integration
+    services (provided by AppVeyor) and GitHub has paid for our non-Windows
+    continuous integration services in the past (provided by Travis CI).
+
+    This is paid directly from Microsoft and GitHub to AppVeyor and
+    Travis CI, respectively.
+
+    Edward Thomson pays for some other supporting materials, like our
+    domain names and a shared 1Password account.  This is sponsored by
+    him directly.
+
+    Finally, we recently had a libgit2 summit where we brought together
+    the core contributors and many users.  This required venue rental and
+    catering which was paid jointly by Microsoft and GitHub (the payment
+    was made directly by Edward Thomson, but will be reimbursed by those
+    companies).
+
+    We would like to change this arrangement so that we pay for our
+    needs directly, as a project, instead of through an individual
+    contributor.  Organizations and individual users can contribute to
+    the project directly in order to fund our goals.
+
+*** Approximately how many users does your project have, and what items
+    lead you to believe your userbase is of a particular size (e.g., post
+    counts to your user mailing list)?
+
+    Since libgit2 is a library, we have very broad and diverse usage
+    by applications but we do not have direct insight into the number
+    of end-users served.  Ultimately, libgit2 is used by hosted
+    applications like GitHub, GitLab and Visual Studio Online, by
+    IDEs and text editors like Visual Studio, Xamarin Studio, and Xcode,
+    by native Git clients like GitKraken and gmaster, and by many other
+    programs and plug-ins.
+
+    This puts the install base of libgit2 into the millions, though
+    it's hard to know how many Visual Studio users are using Git
+    (and thus libgit2).
+
+    GitHub's statistics page suggests that there are several
+    hundred developers who use libgit2 for their own projects,
+    and code contributions suggest that at least a dozen large
+    companies or groups use libgit2 directly.
+
+*** Please list the names, email addresses, and affiliations (e.g.,
+    employer) of key developers and major contributors.  Include both
+    current and past contributors and developers.  Please include date
+    ranges of when those developers/contributors were active.
+
+    Please make this list as extensive and complete as possible.  You need
+    not include every last person who sent one patch, but please include
+    at least those who regularly sent patches or were/are regular
+    contributors.  If you project has contributors who have been inactive
+    for more than five years, you need only to list such inactive
+    contributors if they made substantial contributions.
+
+    We have included information about the libgit2 project itself, as
+    well about LibGit2Sharp, NodeGit, ObjectiveGit and Rugged, since they
+    are the most popular bindings.
+
+    Contributors to the libgit2 project:
+
+    - Russell Belfer <rb@github.com>, active 2012 - 2015
+      Employed by GitHub Inc (2012 - 2015)
+
+    - Emeric Fermas <emeric.fermas@gmail.com>, active 2011 - present
+      Employed by AXA (2011 - present)
+      Contracted by GitHub Inc (2012 - present)
+
+    - Philip Kelley <phkelley@hotmail.com>, active 2012 - 2014
+      Employed by Microsoft Corp (2012 - 2014)
+
+    - Jacques Germishuys <jacquesg@striata.com>, active 2014 - 2015
+      Employed by Striata Marketing Pty (2014 - 2015)
+
+    - Vicent Martí <vicent@github.com>, active 2010 - present
+      Google Summer of Code Student (2010)
+      Contracted by GitHub Inc (2010 - 2011)
+      Employed by GitHub Inc (2011 - present)
+
+    - Carlos Martín Nieto <cmn@dwim.me>, active 2011 - present
+      Google Summer of Code Student (2011)
+      Employed by elego Software Solutions GmbH (2011 - 2015)
+      Contracted by elego, GitHub Inc, Microsoft Corp (2015 - 2016)
+      Employed by GitHub Inc (2016 - present)
+
+    - Shawn Pearce <spearce@spearce.org>, active 2008 - 2009
+      Employed by Google (2008 - 2009)
+
+    - Arthur Schreiber <schreiber.arthur@gmail.com>, active 2012 - present
+      Employed by Hewlett-Packard (2012 - 2016)
+      Employed by GitHub (2016 - present)
+
+    - Michael Schubert <schu@schu.io>, active 2011 - 2013
+      Google Summer of Code Student (2012)
+      Employed by elego Software Solutions GmbH (2011 - 2013)
+
+    - Patrick Steinhardt <ps@pks.im>, active 2015 - present
+      Employed by elego Software Solutions GmbH (2015 - present)
+
+    - Ben Straub <bs@github.com>, active 2012 - 2014
+      Employed by GitHub Inc (2012 - 2014)
+
+    - Edward Thomson <ethomson@edwardthomson.com>, active 2012 - present
+      Employed by Microsoft Corp (2012 - 2015)
+      Employed by GitHub Inc (2016 - 2017)
+      Employed by Microsoft Corp (2017 - present)
+
+    Contributors to the LibGit2Sharp project (who are not included
+    above):
+
+    - Tim Clem <timothy.clem@gmail.com>, active 2011 - 2012
+      Employed by GitHub Inc (2011 - 2012)
+
+    - Keith Dahlby <dahlbyk@gmail.com>, active 2011 - present
+      Employed by J&P Cycles (2011 - 2016)
+      Employed by HuBoard (2016 - present)
+
+    - Yoram Harmelin <yoram.harmelin@gmail.com>, active 2012 - 2014
+      Employed by AXA (2012 - 2014)
+
+    - Jameson Miller <jamill@microsoft.com>, active 2012 - 2015
+      Employed by Microsoft Corp (2012 - 2015)
+
+    - Marius Ungureanu <marius.ungureanu@xamarin.com>, active 2014 - present
+      Employed by Xamarin Inc (2014 - 2016)
+      Employed by Microsoft Corp (2016 - present)
+
+    Contributors to the NodeGit project (who are not included above):
+
+    - Josh Abernathy <joshaber@gmail.com>, active 2015 - present
+      Employed by GitHub Inc (2015 - present)
+
+    - Tim Branyen <tim@tabdeveloper.com>, active 2011 - present
+      Employed by Netflix (2015 - present)
+      Employed by Bocoup (2011 - 2015)
+
+    - John Haley <johnh@axosoft.com>, active 2014 - present
+      Employed by Axosoft (2014 - present)
+
+    - Nick Kallen <socialmediamaster9000@gmail.com>, active 2013
+      Employed by Twitter (2013)
+
+    - Stjepan Rajko <stjepanr@axosoft.com>, active 2015 - present
+      Employed by Axosoft (2015 - present)
+
+    - Michael Robinson <mike@pagesofinterest.net>, active 2013
+      Employed by PAN Media and Advertising (2013)
+
+    - Max Korp <maxkorp@8bytealchemy.com>, active 2014 - present
+      Employed by Axosoft (2014 - present)
+
+    - Tyler Wanek <tylerw@axosoft.com>, active 2015 - present
+      Employed by Axosoft (2015 - present)
+
+    - Steve Smith <steve@github.com>, active 2014 - 2015
+      Employed by GitHub Inc (2014 - 2015)
+
+    Contributors to the ObjectiveGit project (who are not included above):
+
+    - Piet Brauer <piet@nerdishbynature.com>, active 2015 - present
+      Employed by Nerdish by Nature (2015 - present)
+
+    - Ben Chatelain <ben@octop.ad>, active 2014 - present
+      Employed by Kaiser Permanente (2014 - present)
+
+    - Slava Karpenko <slavikus@gmail.com>, active 2015 - present
+      Employed by Unreal Mojo (2015 - present)
+
+    - Alan Rogers <alanjrogers@me.com>, active 2014
+      Employed by GitHub (2014)
+
+    - Etienne Samson <samson.etienne@gmail.com>, active 2013 - present
+      Employed by Mediapart (2013 - present)
+
+    - Justin Spahr-Summers <justin@jspahrsummers.com>, active 2012 - 2015
+      Employed by GitHub Inc (2012 - 2015)
+
+    Contributors to the Rugged project (who are not included above):
+
+    - Brian Lopez <seniorlopez@gmail.com>, active 2010 - present
+      Employed by GitHub Inc (2010 - present)
+
+    - Nikolai Vladimirov <nikolay@vladimiroff.com>, active 2012 - 2014
+      Employed by TextMaster (2012 - 2014)
+
+*** Please include any other pertinent information not given above that
+    you feel we should review with your application.
+
+    We have tried to include an accurate overview of both the libgit2
+    project (as the independent library) and of the libgit2 community
+    (which includes libgit2 itself, as well as the related binding
+    libraries like LibGit2Sharp, Rugged and NodeGit).
+
+    The majority of libgit2's users use the library through these
+    bindings.  For example, Visual Studio uses LibGit2Sharp, Git Kraken
+    uses NodeGit and GitLab uses Rugged.  As a result, we are committed
+    to supporting the binding libraries and including them in our
+    community.
+
+    That said, we would also encourage the binding libraries to consider
+    joining foundations themselves, independently, if they think that
+    would provide them additional value.  (For example, LibGit2Sharp may
+    wish to join the .NET Foundation).
+
+Please note that your answers will be shared with Conservancy's Board of
+Directors, its Evaluation Committee (the membership of which is
+published on Conservancy's website), and with some of Conservancy's
+existing member projects leaders.  We like to get as much input as
+possible from Conservancy's existing project base when evaluating new
+projects for membership.
+
+Please submit the application in pure ASCII format, with paragraph fills
+and line breaks designed for 80 column viewing.  You don't need to
+impress us with formatting; what will actually impress us is if you make
+the information presented in a simple and clear way that is easily read
+and understood when edited with GNU Emacs and emailed around internally
+at Conservancy via standard email forwarding tools.
+
+Before completing your application, please be sure to read our
+application FAQ at: http://sfconservancy.org/members/apply/
+
+Feel free to include any additional information you'd like us to review
+in considering an application, but please try to be brief as possible.
+
+Please note that Conservancy does require that projects consider donating
+a percentage of their funding to the general operating costs of the
+Conservancy.  This is a way to assure we can continue providing a high
+level of service to all Conservancy projects.  We'll discuss this further
+and in detail after the evaluation process.
+
+Please be advised that you may get follow-up clarification questions on
+your application.  Please be prepared to respond to these inquiries
+quickly to assure timely processing of your application.
+######################################################################
